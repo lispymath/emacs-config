@@ -33,4 +33,13 @@
   :config
   ;; Add all your customizations prior to loading the themes
   (setq modus-themes-italic-constructs t
-        modus-themes-bold-constructs t)
+        modus-themes-bold-constructs t))
+
+(use-package geiser
+  :ensure t
+  :config
+  (setq geiser-active-implementations '(chez)
+	geiser-chez-binary "/usr/bin/scheme"
+	geiser-default-implementation 'chez))
+
+(add-to-list 'auto-mode-alist '("\\.scm\\'" . scheme-mode))
